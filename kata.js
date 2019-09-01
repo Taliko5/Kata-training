@@ -146,15 +146,19 @@ const Sheep = queue => queue.indexOf('wolf') === queue.length - 1 ? "Pls go away
     `Oi! Sheep number ${queue.length -1 wolfindexOf } ! You are about to be eaten by a wolf!`
 
 
-    // kata 7 
-    // In a factory a printer prints labels
-    // for boxes.For one kind of boxes the printer has to use colors which,
-    //     for the sake of simplicity, are named with letters from a to m.
+// kata 7 
+// In a factory a printer prints labels
+// for boxes.For one kind of boxes the printer has to use colors which,
+//     for the sake of simplicity, are named with letters from a to m.
 
-    // The colors used by the printer are recorded in a control string.For example a "good"
-    // control string would be aaabbbbhaijjjm meaning that the printer used three times color a, four times color b, one time color h then one time color a...
+// The colors used by the printer are recorded in a control string.For example a "good"
+// control string would be aaabbbbhaijjjm meaning that the printer used three times color a, four times color b, one time color h then one time color a...
 
-    //     Sometimes there are problems: lack of colors, technical malfunction and a "bad"
-    // control string is produced e.g.aaaxbbbbyyhwawiwjjjwwm with letters not from a to m.
+//     Sometimes there are problems: lack of colors, technical malfunction and a "bad"
+// control string is produced e.g.aaaxbbbbyyhwawiwjjjwwm with letters not from a to 
 
-    
+// I could make it ...another's solution
+function printerError(s) {
+    return s.match(/[^a-m]/g).length + "/" + s.length;
+
+}
