@@ -166,22 +166,104 @@ function printerError(s) {
 // kata 7
 //
 // unsolved impossibe way
-function rowWeights(array){array.map((el,idx){
- let first = 0
- let second = 0
- if(arr[0]+ arr[idx] % 2 === 0){
-   first += arr[idx]
-   } else {
-   second += arr[idx]
-   }
-   return first, second]
- 
-})
+function rowWeights(array) {
+    array.map((el, idx) {
+            let first = 0
+            let second = 0
+            if (arr[0] + arr[idx] % 2 === 0) {
+                first += arr[idx]
+            } else {
+                second += arr[idx]
+            }
+            return first, second]
+
+    })
 
 // answer
-function rowWeights(array){
-let first = array.filter((el,idx)=>idx%2===0).reduce((acc,l)=>acc+l,0);
-let second = array.filter((el,idx)=>idx%2!=0).reduce((acc,l)=>acc+l,0);
- 
- return [first, second]
+function rowWeights(array) {
+    let first = array.filter((el, idx) => idx % 2 === 0).reduce((acc, l) => acc + l, 0);
+    let second = array.filter((el, idx) => idx % 2 != 0).reduce((acc, l) => acc + l, 0);
+
+    return [first, second]
+}
+
+
+// kata 7 
+//https://www.codewars.com/kata/ordered-count-of-characters/train/javascript
+
+// my 
+
+var orderedCount = function (text) {
+    let order = []
+    let count = 0;
+    let txtArr = text.split("");
+    let singleTxt = new Set(txtArr)
+
+
+    txtArr.forEach((word) => {
+        for (let i = 0; i < singleTxt.length; i++) {
+            let count = 0;
+            if (word === singleTxt[i])
+                count += 1
+            order.push([word, count])
+
+        }
+    })
+    return order;
+}
+
+orderedCount('neehhhs')
+
+
+// solution 
+var orderedCount = function (text) {
+    /*
+    const uniques = Array.from(new Set(text));
+    */
+    const uniques = [];
+
+    for (let i = 0; i < text.length; i++) {
+        const current = text[i];
+        if (uniques.indexOf(current) === -1) uniques.push(current);
+    }
+
+    const result = uniques.map(function (letter) {
+
+        /*
+          let count = text.split(letter).length - 1;
+        */
+
+        let count = 0;
+
+        for (let i = 0; i < text.length; i++) {
+            const current = text[i];
+
+            if (current === letter) count++;
+        }
+
+        return [letter, count];
+    })
+
+    return result;
+
+    // bruno
+var orderedCount = function (text) {
+
+  let obj = {}, result = [];
+
+  for (let a of text) {
+
+    obj[a] = (obj[a]||0) + 1
+  }
+  for (let i of new Set(text)) {
+
+    result.push([i, obj[i]]);
+
+  }
+
+  return result
+
+}
+
+
 }
