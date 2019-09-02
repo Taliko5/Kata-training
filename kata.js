@@ -159,6 +159,29 @@ const Sheep = queue => queue.indexOf('wolf') === queue.length - 1 ? "Pls go away
 
 // I could make it ...another's solution
 function printerError(s) {
-    return s.match(/[^a-m]/g).length + "/" + s.length;
+    return s.match(/gi[^a-m]/g).length + "/" + s.length;
 
+}
+
+// kata 7
+//
+// unsolved impossibe way
+function rowWeights(array){array.map((el,idx){
+ let first = 0
+ let second = 0
+ if(arr[0]+ arr[idx] % 2 === 0){
+   first += arr[idx]
+   } else {
+   second += arr[idx]
+   }
+   return first, second]
+ 
+})
+
+// answer
+function rowWeights(array){
+let first = array.filter((el,idx)=>idx%2===0).reduce((acc,l)=>acc+l,0);
+let second = array.filter((el,idx)=>idx%2!=0).reduce((acc,l)=>acc+l,0);
+ 
+ return [first, second]
 }
