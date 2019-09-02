@@ -267,3 +267,25 @@ var orderedCount = function (text) {
 
 
 }
+
+//kata 7 
+//https://www.codewars.com/kata/build-a-square/train/javascript
+function generateShape(int){
+let count = "";
+let star = '+'.repeat(int)
+
+for(let i =0; i < int; i++){
+count += `${star}`;
+if(i !== int-1)
+count += `\n`
+}
+
+return count
+}
+
+// nelly
+function generateShape(int){
+return ("+".repeat(int)+"\n").repeat(int).slice(0,-1);
+
+}
+
