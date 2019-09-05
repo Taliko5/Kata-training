@@ -247,45 +247,140 @@ var orderedCount = function (text) {
     return result;
 
     // bruno
-var orderedCount = function (text) {
+    var orderedCount = function (text) {
 
-  let obj = {}, result = [];
+        let obj = {},
+            result = [];
 
-  for (let a of text) {
+        for (let a of text) {
 
-    obj[a] = (obj[a]||0) + 1
-  }
-  for (let i of new Set(text)) {
+            obj[a] = (obj[a] || 0) + 1
+        }
+        for (let i of new Set(text)) {
 
-    result.push([i, obj[i]]);
+            result.push([i, obj[i]]);
 
-  }
+        }
 
-  return result
+        return result
 
-}
+    }
 
 
 }
 
 //kata 7 
 //https://www.codewars.com/kata/build-a-square/train/javascript
-function generateShape(int){
-let count = "";
-let star = '+'.repeat(int)
+function generateShape(int) {
+    let count = "";
+    let star = '+'.repeat(int)
 
-for(let i =0; i < int; i++){
-count += `${star}`;
-if(i !== int-1)
-count += `\n`
-}
+    for (let i = 0; i < int; i++) {
+        count += `${star}`;
+        if (i !== int - 1)
+            count += `\n`
+    }
 
-return count
+    return count
 }
 
 // nelly
-function generateShape(int){
-return ("+".repeat(int)+"\n").repeat(int).slice(0,-1);
+function generateShape(int) {
+    return ("+".repeat(int) + "\n").repeat(int).slice(0, -1);
 
+}
+
+
+var orderedCount = function (text) {
+    let order = []
+    let count = 0;
+    let txtArr = text.split("");
+    let singleTxt = [...new Set(txtArr)]
+    //   console.log(singleTxt)
+
+    txtArr.forEach((word) => {
+
+        for (let i = 0; i < singleTxt.length; i++) {
+            let count = 0;
+            if (word === singleTxt[i])
+                count += 1
+        }
+        order.push([word, count])
+    })
+    //   console.log(order)
+    return order;
+}
+
+orderedCount('neehhhs')
+
+
+
+// var orderedCount = function(text) {
+// let uniques = array.from(new Set(text))
+
+// // const uniques =[];
+// // for(let i = 0; i<text.length; i++){
+// //   const current = text[i];
+// //   if(uniques.indexOf(current)!==-1)uniques.push(current)
+// // }
+// /*
+// text.split(letter)
+// */
+// const result = uniques.map(function(letter){
+//   let count = 0
+//   for(let i = 0; i< text.length; i++){
+//     const current = text[i]
+//     if(current === letter) count++;
+//   }
+//   return [letter, count]
+// })
+// }
+
+
+// kata 7 
+//
+
+//my answer
+
+const onlyDuplicates = (str) => {
+    let strArr = [...str];
+    const dubArr = strArr.map((el, idx) => {
+        if (strArr.indexOf(strArr[idx]) !== strArr.lastIndexOf(strArr[idx]))
+            return strArr[idx];
+    });
+    return dubArr.join("")
+}
+onlyDuplicates("abccdefee")
+
+// kata
+function onlyDuplicates(str) {
+    return str.split('').filter(e => str.indexOf(e) != str.lastIndexOf(e)).join('')
+}
+
+// andre
+const dubArr = strArr.reduce((acc, val) => {
+    if (strArr.indexOf(strArr[idx]) !== strArr.lastIndexOf(strArr[idx]))
+        return acc + val
+    return acc;
+});
+return dubArr.join("")
+}
+
+//kata 8
+//https://www.codewars.com/kata/counting-sheep-dot-dot-dot/train/javascript
+//countingsheep
+// my answer
+const countSheeps = (arrayOfSheep)=>{
+let count=0;
+arrayOfSheep.forEach((el,idx)=>{
+if(el) count+=1;
+})
+return count;
+
+}
+
+// kata perope
+function countSheeps(arrayOfSheeps) {
+  return arrayOfSheeps.filter(Boolean).length;
 }
 
