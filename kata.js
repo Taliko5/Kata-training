@@ -384,3 +384,53 @@ function countSheeps(arrayOfSheeps) {
   return arrayOfSheeps.filter(Boolean).length;
 }
 
+// kata 8
+//my
+function maxMultiple(divisor, bound){
+  let maxNr=0;
+  for(let i=0 ; i< bound; i++){
+    if(i % divisor === 0 )
+      if(maxNr < i)
+      maxNr = i;
+    
+ }
+  return maxNr
+}
+
+  maxMultiple(2,7)
+  
+// minus
+function maxMultiple(divisor, bound){
+
+  for(let i= bound ; i > 0; i--){
+   if(i % divisor === 0 ) return i;
+}
+    return maxNr
+}
+
+//hari 
+function maxMultiple(divisor, bound){
+
+ return bound - (bound % divisor)
+}  
+
+// kata 7 
+// my answer
+function longest(s1, s2) { 
+  let unique = [];
+  if(s1.length >s2.length){
+  return unique = [...new Set(s1)].sort((a,b)=>a.localeCompare(b)).join('')
+    }else{
+  return unique = [...new Set(s2)].sort((a,b)=>a.localeCompare(b)).join('')
+
+   }
+}
+
+//people
+
+let longest =(s1, s2)=> [...new Set(s1 + s2)].sort().join('')
+  
+  
+
+
+
