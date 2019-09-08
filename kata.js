@@ -370,67 +370,82 @@ return dubArr.join("")
 //https://www.codewars.com/kata/counting-sheep-dot-dot-dot/train/javascript
 //countingsheep
 // my answer
-const countSheeps = (arrayOfSheep)=>{
-let count=0;
-arrayOfSheep.forEach((el,idx)=>{
-if(el) count+=1;
-})
-return count;
+const countSheeps = (arrayOfSheep) => {
+    let count = 0;
+    arrayOfSheep.forEach((el, idx) => {
+        if (el) count += 1;
+    })
+    return count;
 
 }
 
 // kata perope
 function countSheeps(arrayOfSheeps) {
-  return arrayOfSheeps.filter(Boolean).length;
+    return arrayOfSheeps.filter(Boolean).length;
 }
 
 // kata 8
 //my
-function maxMultiple(divisor, bound){
-  let maxNr=0;
-  for(let i=0 ; i< bound; i++){
-    if(i % divisor === 0 )
-      if(maxNr < i)
-      maxNr = i;
-    
- }
-  return maxNr
+function maxMultiple(divisor, bound) {
+    let maxNr = 0;
+    for (let i = 0; i < bound; i++) {
+        if (i % divisor === 0)
+            if (maxNr < i)
+                maxNr = i;
+
+    }
+    return maxNr
 }
 
-  maxMultiple(2,7)
-  
+maxMultiple(2, 7)
+
 // minus
-function maxMultiple(divisor, bound){
+function maxMultiple(divisor, bound) {
 
-  for(let i= bound ; i > 0; i--){
-   if(i % divisor === 0 ) return i;
-}
+    for (let i = bound; i > 0; i--) {
+        if (i % divisor === 0) return i;
+    }
     return maxNr
 }
 
 //hari 
-function maxMultiple(divisor, bound){
+function maxMultiple(divisor, bound) {
 
- return bound - (bound % divisor)
-}  
+    return bound - (bound % divisor)
+}
 
 // kata 7 
 // my answer
-function longest(s1, s2) { 
-  let unique = [];
-  if(s1.length >s2.length){
-  return unique = [...new Set(s1)].sort((a,b)=>a.localeCompare(b)).join('')
-    }else{
-  return unique = [...new Set(s2)].sort((a,b)=>a.localeCompare(b)).join('')
+function longest(s1, s2) {
+    let unique = [];
+    if (s1.length > s2.length) {
+        return unique = [...new Set(s1)].sort((a, b) => a.localeCompare(b)).join('')
+    } else {
+        return unique = [...new Set(s2)].sort((a, b) => a.localeCompare(b)).join('')
 
-   }
+    }
 }
 
 //people
 
-let longest =(s1, s2)=> [...new Set(s1 + s2)].sort().join('')
-  
-  
+let longest = (s1, s2) => [...new Set(s1 + s2)].sort().join('');
+
+//kata 7 
+
+// ny unsolved
+function movie(card, ticket, perc) {
+    result = 0;
+    let i = 1;
+    for (i = 1;; i++) {
+        let price = card + (ticket * Math.pow(perc, i))
+        if (Math.ceil(price) && price < ticket * i) return i;
+    }
+    return result = i;
+};
 
 
-
+//result people
+function movie(card, ticket, perc) {
+    for (let s = perc, n = 1; Math.ceil(card + s * ticket) >= ticket * n; s += Math.pow(perc, ++n))
+        return n;
+}
