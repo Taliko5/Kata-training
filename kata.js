@@ -449,3 +449,34 @@ function movie(card, ticket, perc) {
     for (let s = perc, n = 1; Math.ceil(card + s * ticket) >= ticket * n; s += Math.pow(perc, ++n))
         return n;
 }
+
+//kata 5 
+// https://www.codewars.com/kata/simple-pig-latin/train/javascript
+
+
+// my solution
+function pigIt(str){
+let arr = str.split(' ');
+ let words = [];
+  for(let i=0; i < arr.length; i++){
+    if(arr[i]==="!" ||arr[i]==="?"){
+      words.push(arr[i])
+    }else{
+    let change = arr[i]+arr[i][0]+"ay";
+      words.push(change.slice(1,change.length))
+  }}
+  return words.join(" ") 
+};
+
+//iouli
+
+function pigIt(str){
+let temp = str.split(' ');
+let res ="";
+const mapped = temp.map(word=>{
+    if(word=="?" || word ==="!") return word;
+    else return word.substr(1,word.length)+[0]+"ay";
+})
+res = mapped.join(" ");
+
+};
