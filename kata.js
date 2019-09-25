@@ -116,7 +116,7 @@ function hasOnlyDistingtDigit(year) {
 //counting
 function distinctDigitYear(year) {
 
-    for (let i = year + 1;; i++) {
+    for (let i = year + 1; ; i++) {
         //i<= 9012 withought writing limit
         // it stops untill the condition:
         // 9000 is 9012 is next distinct gidits 
@@ -143,7 +143,7 @@ function warnTheSheep(queue) {
 }
 
 const Sheep = queue => queue.indexOf('wolf') === queue.length - 1 ? "Pls go away and stop eating my sheep" :
-    `Oi! Sheep number ${queue.length -1 wolfindexOf } ! You are about to be eaten by a wolf!`
+    `Oi! Sheep number ${queue.length - 1 wolfindexOf } !You are about to be eaten by a wolf!`
 
 
 // kata 7 
@@ -276,7 +276,7 @@ function generateShape(int) {
     let star = '+'.repeat(int)
 
     for (let i = 0; i < int; i++) {
-        count += `${star}`;
+        count += `${ star } `;
         if (i !== int - 1)
             count += `\n`
     }
@@ -480,3 +480,81 @@ const mapped = temp.map(word=>{
 res = mapped.join(" ");
 
 };
+
+
+//kata 7 kyu
+https://www.codewars.com/kata/get-the-middle-character/train/javascript
+function getMiddle(s)
+{
+ let i = s.length;
+  if( i  % 2 === 0){
+      let y = i / 2;
+     let  z = y - 1;
+      var array = [...s];
+    return s[z]+s[y]
+  }else{
+     let y = ( s.length -1) / 2;
+      var array = [...s];
+      return s[y]
+  }
+}
+
+//people
+function getMiddle(s)
+{
+  return s.slice((s.length-1)/2, s.length/2+1);
+}
+
+
+
+//kata7 
+//https://www.codewars.com/kata/5c563cb78dac1951c2d60f01
+
+function passTheDoorMan (word){
+const alpha =['0','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r',
+'s','t','u','v',
+'w','x','y','z'];
+let arr = [...word];
+let doub = [];
+arr.forEach((el,idx)=>el=>{ 
+  if(arr.indexOf(el)!== arr.lastIndexOf(el))
+                          
+                          })
+  
+  
+
+}
+    //iouli        
+function passTheDoorMan (word){
+let alph = '0abcdefghijklmnopqrstuvwxyz'
+for(let i=0; i<word.length; i++){
+if(word[i]===word[i-1]) return alph.indexOf(word[i])*3
+}
+}
+
+//kata7
+
+//https://www.codewars.com/kata/remove-duplicate-words/train/javascript
+//my answer
+function removeDuplicateWords (s) {
+  const arr = s.split(" ").filter((el,idx,arr)=>{return arr.indexOf(el) === idx})
+   return arr.join(" ")
+}
+
+//kata7
+//https://www.codewars.com/kata/the-office-iii-broken-photocopier/train/javascript
+
+// for loop
+function broken(x){
+let result ='';
+  for(let i =0; i <x.length; i++){
+    result += x[i]=== '0'? '1':'0';
+  }
+  return result
+}
+
+//map
+function broken(x){
+return [...x].map(el=> el === '0'? '1': "0").join("");
+ 
+}
