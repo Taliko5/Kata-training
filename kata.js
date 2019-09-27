@@ -558,3 +558,107 @@ function broken(x){
 return [...x].map(el=> el === '0'? '1': "0").join("");
  
 }
+
+
+
+//kata 6
+//https://www.codewars.com/kata/format-a-string-of-names-like-bart-lisa-and-maggie/train/javascript
+
+
+
+// my  hahha too complicated
+ let num = names.length-1
+let result = names.map((el,idx,arr)=>{ if(arr.length === 0 ) return ''
+   if(arr.length > 1)return el.name 
+  }).join(" ").split(" ");
+   result.splice(num,0,"&")
+  return result
+
+
+
+//moritz
+const list = (names) => {
+
+ let arr = names.map(person => person.name)
+
+ let first = arr.splice(0, arr.length -1).join(", ")
+
+ return first.length === 0 ? `${arr}` : `${first} & ${arr}`
+
+}
+
+// with people
+// const list = (names) => {
+//  let arr = names.map(person => person.name);
+//  let first = arr.splice(0, arr.length - 1).join(", ");
+//  return first.length === 0 ? `${arr}` : `${first} & ${arr}`
+// }
+
+const list = names => {
+  return names.reduce((acc, val, i) => {
+    
+    if (i === names.length - 2) {
+      acc += val.name + ' & ';
+    } else if (i < names.length - 2) {
+      acc += val.name + ', ';
+    } else {
+      acc += val.name;
+    }
+    
+    return acc
+  }, '')
+}
+
+// const list = names => {
+//   const namesArr = names.map((el, i, arr) => {
+//     if (el === arr[arr.length - 1]) {
+//       return el.name;
+//     } else if (el === arr[arr.length - 2]) {
+//       return el.name + ' & ';
+//     } else {
+//       return el.name + ', ';
+//     }
+//   })
+//   return namesArr.join('');
+// }
+
+// const list = names => {
+//   const namesArr = names.map(el => el.name);
+//   const lastElement = namesArr[namesArr.length - 1];
+//   const namesArrWithoutLast = namesArr.slice(0, -1).join(', ');
+  
+//   let result = '';
+  
+//   if (namesArr.length >= 2) {
+//     result = `${namesArrWithoutLast} & ${lastElement}`;
+//   } else if (namesArr.length === 1) {
+//     result = namesArr[0];
+//   }
+  
+//   return result;
+// }
+
+// const list = (names) => {
+//   let result = '';
+  
+//   for (let i = 0; i < names.length; i++) {
+//     if (i === names.length - 2) {
+//       result += names[i].name + ' & ';
+//     } else if (i < names.length - 2) {
+//       result += names[i].name + ', ';
+//     } else {
+//       result += names[i].name;
+//     }
+//   }
+  
+//   return result;
+// }
+/*
+[
+  0: {name: 'Bart'},
+  1: {name: 'Lisa'},
+  2: {name: 'Maggie'},
+  
+]
+length: 3
+*/
