@@ -662,3 +662,58 @@ const list = names => {
 ]
 length: 3
 */
+
+
+//kata 5 
+//https://www.codewars.com/kata/pete-the-baker/train/javascript
+//montaser
+       let min;
+Object.Keys(recipe).forEach(ingr=>
+if(!avaiable[ingr]) min =0;
+ const possible =Math.floor(avaiable[ingr])/recipe[ingr])
+if(!min||possiblle<min) min = possible;
+  return min;
+
+  //kata 4
+  //https://www.codewars.com/kata/pyramid-slide-down/train/javascript
+
+  // my challenge & missunderstanding hehe
+  //  
+  function longestSlideDown (pyramid) {
+  let lngNr =[];
+  for(let i= 0; i< pyramid.length; i++){
+   i.map((el,idx,arr)=>{lngNr.push[arr[arr.length-1]] 
+   } )
+
+}
+ return lngNr.reduce((acc,el)=>{acc+el},0)
+  }
+  
+ 
+  // solusion by min
+
+  function longestSlideDown(pyramid){
+      for(let i =pyramid.length-2: i>=0; i--){
+          for(let j=0; j<= pryamid[i].length-1;j++){
+              pyramid[i][j]=pyramid[i][j]+Math.max(pyramid[i+1],pramid[i+1][j+1])
+          }
+          return pyramid[0][0]
+      }
+  }
+
+
+  //kata 6  https://www.codewars.com/kata/break-camelcase/train/javascript
+
+  function solution(string) {
+  return  string.split("").map((el)=>{
+     if(el === el.toUpperCase()){
+         el = " " + el;
+     }
+     return el
+  
+  }
+  ).join('')
+
+}
+                                
+
